@@ -5,6 +5,8 @@
  */
 package ex.pkg11_arraylistobxeto;
 
+import java.util.Objects;
+
 /**
  *
  * @author lvazquezdorna
@@ -53,6 +55,31 @@ public class Alumno implements Comparable {
     @Override
     public String toString() {
         return "Alumno{" + "nome=" + nome + ", dni=" + dni + ", nota=" + nota + '}';
+    }
+//insert code y aparece hashcode y equals
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 41 * hash + Objects.hashCode(this.nome);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Alumno other = (Alumno) obj;
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        return true;
     }
 
     @Override

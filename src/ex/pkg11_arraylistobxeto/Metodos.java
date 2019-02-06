@@ -71,8 +71,8 @@ public class Metodos {
     }
 
     public void borrarDniIteration(String dni, ArrayList<Alumno> list) {
-       Alumno al = new Alumno();
-       Iterator it = list.iterator();
+        Alumno al = new Alumno();
+        Iterator it = list.iterator();
 
         while (it.hasNext()) {
             al = (Alumno) it.next();
@@ -81,4 +81,33 @@ public class Metodos {
             }
         }
     }
+
+    public void buscarMostrar(String dni, ArrayList<Alumno> list) {
+        int atopado=0;
+        for (Alumno al : list) {
+            if (dni.equalsIgnoreCase(al.getDni())) {
+                al.toString();
+                atopado=1;
+                break;
+            }
+            if(atopado==0){
+                System.out.println("Non hay ninguna persoa con ese DNI");
+            }
+        }
+    }
+    
+    public Alumno buscarDNI (String dni, ArrayList<Alumno> list){
+        Alumno al;
+        
+    return al;
+    }
+    
+    //modificar nota a aun alumno
+    
+    public void cambiarNota (Alumno al,ArrayList<Alumno>lista){
+        int dni=PedirDatos.entero("Introduce dni:");
+        lista=lista
+    al= buscarDNI(dni, list);
+    }
+    
 }
