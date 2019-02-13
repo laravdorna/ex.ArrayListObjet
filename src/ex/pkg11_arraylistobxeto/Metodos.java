@@ -48,6 +48,7 @@ public class Metodos {
         for (Alumno al : list) {
             //al.toString();
             System.out.println(al);
+            
         }
     }
 
